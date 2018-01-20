@@ -2,6 +2,8 @@
    https://facebook.github.io/react-native/docs/navigation.html#react-navigation
 */
 
+/* style stuff: https://facebook.github.io/react-native/docs/style.html */
+
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
