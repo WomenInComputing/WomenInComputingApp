@@ -1,3 +1,7 @@
+/* navigation stuff: https://reactnavigation.org/docs/intro/basic-app 
+   https://facebook.github.io/react-native/docs/navigation.html#react-navigation
+*/
+
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
