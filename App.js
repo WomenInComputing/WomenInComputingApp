@@ -5,7 +5,7 @@
 /* style stuff: https://facebook.github.io/react-native/docs/style.html */
 
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 class HomeScreen extends React.Component {
@@ -15,11 +15,18 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
-        <Text>Hello, Everyone</Text>
+      <View style={styles.container}>
+        <Text style={{color: '#00ff00', marginBottom: '5%'}}>University of Wisconsin - Milwaukee</Text>
+        <Image
+          source={require('./img/wiclogo.png')}
+        />
         <Button
           onPress={() => navigate('About')}
           title="About us"
+        />
+        <Button
+          onPress={() => navigate('Meetings')}
+          title="Meetings"
         />
       </View>);
   }
@@ -58,8 +65,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000000', 
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 });
