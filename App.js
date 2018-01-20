@@ -1,15 +1,51 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home - Women In Computing'
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View>
+        <Text>Hello, Everyone</Text>
+        <Button
+          onPress={() => navigate('About')}
+          title="About us"
+        />
+      </View>);
+  }
+}
+
+class AboutScreen extends React.Component {
+  static navigationOptions = {
+    title: "About"
+  };
+  render() {
+    return <Text>About</Text>;
+  }
+}
+
+class MeetingScreen extends React.Component {
+  static navigationOptions = {
+    title: "Meetings"
+  };
+  render() {
+    return <Text>Meetings</Text>;
+  }
+}
+
+const SimpleApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  Meetings: { screen: MeetingScreen },
+  About: { screen: AboutScreen }
+});
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
+    return <SimpleApp />;
   }
 }
 
@@ -18,6 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
